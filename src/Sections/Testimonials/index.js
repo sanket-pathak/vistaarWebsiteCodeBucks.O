@@ -84,15 +84,14 @@ const Testimonials = () => {
       <Carousal>
         <Slider {...settings}>
           <Card
-            text="CodeBucks has been essential part of our business. I would definetly
-        recommend CodeBucks. It has been amazing to have them."
-            name="Jenny (CodeCall)"
+            text="A proud member of Central Park Debaters!"
+            name="Sanket Pathak"
             image="avatar-1"
           />
 
           <Card
-            text="CodeBucks has been essential part of our business. I would definetly recommend CodeBucks. It has been amazing to have them."
-            name="Jenny (CodeCall)"
+            text="Das with an extra s!"
+            name="Ankita"
             image="avatar-2"
           />
 
