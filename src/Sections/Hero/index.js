@@ -1,13 +1,11 @@
 // This is HeroSection component, Main top section of website
-
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import styled, { keyframes } from "styled-components";
-
 import pinkBlob from "../../assets/blobPink.png";
 import purpleBlob from "../../assets/blob purple.png";
 import whiteBlob from "../../assets/blob white.png";
 import arrow from "../../assets/Arrow Right.svg";
 import Mobile from "../../assets/mobile.svg";
-
 const move = keyframes`
 0% { transform: translateY(-5px)  }
     50% { transform: translateY(10px) }
@@ -191,25 +189,27 @@ const HeroSection = () => {
         <Lb id="leftBlock">
           <Topic>
             <Circle />
-            <span>We Build Web</span>
+            <span>Where Words Matter</span>
           </Topic>
-          <Title>Transforming your digital presence</Title>
+          <Title>We Came. We Spoke. We Conquered.</Title>
           <SubText>
-            we help fast growing companies build award winning websites
+          Disagreeing Professionally Since 2015
           </SubText>
-          <CTA>
+          <a href="https://debsocnitdgp.com/" target="_blank"><CTA>
             Get in touch &nbsp;
-            <img src={arrow} alt="cta" width="100" height="100" />
-          </CTA>
+            <img src={arrow} alt="cta" width="100" height="100"  />
+          </CTA></a>
+          
         </Lb>
 
-        <MobileSvg
-          src={Mobile}
-          alt="Mobile Svg"
-          srcSet=""
-          width="400"
-          height="400"
-        />
+        <div style={{zIndex:11}}><DotLottieReact
+      src="https://lottie.host/e77bceca-1228-4072-8f20-97f51985cadc/OIwgksZ0iV.lottie"
+      loop
+      autoplay
+      height={450}
+      width={450}
+    /></div>
+        
       </MainContent>
     </HomeSection>
   );
