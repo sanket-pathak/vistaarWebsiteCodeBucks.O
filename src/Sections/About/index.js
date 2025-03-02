@@ -3,7 +3,7 @@ import wave from "../../assets/waves.svg";
 import rocket from "../../assets/rocket image.png";
 import human from "../../assets/human.svg";
 import hand from "../../assets/hand.svg";
-
+import gotIdea from "../../assets/gotIdea.png"
 const move = keyframes`
 0% { transform: translateY(-5px)         }
     50% { transform: translateY(10px) translateX(10px)        }
@@ -131,7 +131,7 @@ const About = () => {
         </div>
         <Content>
           <Rocket>
-            <img src={rocket} alt="" width="400" height="400" />
+            <img src={gotIdea} alt="" width="400" height="400" />
           </Rocket>
           <AboutText>
             <Human>
@@ -139,10 +139,7 @@ const About = () => {
             </Human>
 
             <Text>
-              We help our customers to tell about themselves, to grow and stand
-              out in an increasingly competitive digital world, through creative
-              projects that are able to attract and involve, creating strategic
-              value.
+            Gear up for a war of words where wit is your weapon and logic is your shield!  Vistaar isn't just a debating fest – it's a battlefield of brains, where comebacks hit harder than reality. Join us as we turn mics into magic and arguments into art. Ready to outtalk, outthink, and outshine?
             </Text>
             <div>
               <Circle style={{ backgroundColor: "var(--purple)" }} />
