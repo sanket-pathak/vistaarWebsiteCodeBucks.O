@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tube from "../../assets/3dtube.png";
 import Cone from "../../assets/3dtriangle.png";
 import Capsule from "../../assets/3dcapsule.png";
-
+import NITDPD from "../../assets/NITPD.svg";
 import TextBlock from "../../components/TextBlock";
 import SvgBlock from "../../components/SvgBlock";
 
@@ -329,51 +329,60 @@ const Services = () => {
 
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Design"
-          title={<h1>We build award winning Designs</h1>}
+          topic="Our Flagship Event"
+          title={<h1>NITD Parliamentary Debate</h1>}
           subText={
             <h5>
-              We help clients to build great design to attract more customers
-            </h5>
+A dynamic 3-on-3 format where Government 
+and Opposition clash over a motion, with prepared 
+and impromptu speeches judged on matter, manner, and method.
+ Expect fast-paced arguments, sharp rebuttals, and strategic 
+ case-building.            </h5>
           }
         />
         <OBJ>
           <img src={Tube} alt="Tube Object" width="400" height="400" />
         </OBJ>
-        <SvgBlock svg="Design.svg" />
+        <SvgBlock svg="NITPD.svg" />
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Develop"
-          title={<h1>We Develope high quality Web & App</h1>}
+          topic="Killcode"
+          title={<h1>The Ultimate QR Hunt</h1>}
           subText={
             <h5>
-              We build appropriate solution to develope your website & app with
-              best tools available
-            </h5>
+A high-stakes, campus-wide murder mystery where every student becomes
+ a detective. Solve cryptic clues, scan hidden QR codes scattered 
+ across college, and piece together evidence to unmask the killer. With twists at 
+ every turn and a thrilling narrative, it's not just a hunt — it's a race against
+  time for glory and a massive prize pool. Engage your instincts, trust no one,
+   and may the sharpest minds win!
+</h5>
           }
         />
         <OBJ>
           <img src={Cone} alt="Cone Object" width="400" height="400" />
         </OBJ>
-        <SvgBlock svg="Develope.svg" />
+        <SvgBlock svg="QR.svg" />
       </Content>
       <Content>
         <TextBlock
-          topic="Support"
-          title={<h1>We provide support for your digital presence</h1>}
+          topic="Because every tomorrow deserves a smile"
+          title={<h1>Brighter Tomorrow – Games Beyond Boundaries</h1>}
           subText={
             <h5>
-              Once your system is online, we will stay on hand to help you use
-              it and provide technical support and maintenance <br /> your
-              business
+              A heartwarming day where laughter takes the lead. "Brighter Tomorrow" brings the free-spirited joy of games,
+               creativity, and togetherness to children from local orphanages. It's not just an event — it's
+                a celebration of youth, hope, and the belief that every child deserves moments of pure,
+                 carefree fun. Through playful competitions and shared smiles, 
+              we build memories that light the path to a brighter future.
             </h5>
           }
         />
         <OBJ>
           <img src={Capsule} alt="Capsule Object" width="400" height="400" />
         </OBJ>
-        <SvgBlock svg="Support.svg" />
+        <SvgBlock svg="BT.svg" />
       </Content>
     </ServiceSection>
   );
