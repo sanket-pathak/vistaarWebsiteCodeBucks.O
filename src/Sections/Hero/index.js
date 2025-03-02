@@ -5,7 +5,7 @@ import pinkBlob from "../../assets/blobPink.png";
 import purpleBlob from "../../assets/blob purple.png";
 import whiteBlob from "../../assets/blob white.png";
 import arrow from "../../assets/Arrow Right.svg";
-import Mobile from "../../assets/mobile.svg";
+import bgImage from "../../assets/landingBG.svg"
 const move = keyframes`
 0% { transform: translateY(-5px)  }
     50% { transform: translateY(10px) }
@@ -172,7 +172,7 @@ const CTA = styled.button`
 
 const HeroSection = () => {
   return (
-    <HomeSection id="home">
+    <HomeSection id="home" style={{ backgroundImage: `url(${bgImage})` }}>
       <Blobs>
         <PinkBlob>
           <img src={pinkBlob} alt="" width="400" height="400" />{" "}
