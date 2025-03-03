@@ -11,7 +11,7 @@ const Parallax = () => {
       "Bienvenido",
       "Bienvenue",
       "Willkommen",
-      "Benvenuto",
+      "সুস্বাগতম",
       "Bem-vindo",
       "Welkom",
       "Добро пожаловать",
