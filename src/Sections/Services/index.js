@@ -6,12 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tube from "../../assets/3dtube.png";
 import Cone from "../../assets/3dtriangle.png";
 import Capsule from "../../assets/3dcapsule.png";
-import NITDPD from "../../assets/NITPD.svg";
 import TextBlock from "../../components/TextBlock";
 import SvgBlock from "../../components/SvgBlock";
-
-// const TextBlock = lazy(() => import("../../components/TextBlock"));
-// const SvgBlock = lazy(() => import("../../components/SvgBlock"));
 
 const ServiceSection = styled.section`
   width: 100vw;
@@ -123,29 +119,25 @@ const Services = () => {
 
   useEffect(() => {
     const element = ref.current;
-    ////
     const mq = window.matchMedia("(max-width: 48em)");
+
     const t1 = gsap.timeline({
       scrollTrigger: {
         trigger: document.getElementById("services"),
-
         start: "top top+=180",
-
         end: "bottom bottom",
-
         pin: element,
         pinReparent: true,
       },
     });
+
     t1.fromTo(
       document.getElementById("line"),
-
-      {
-        height: "15rem",
-      },
+      { height: "15rem" },
       {
         height: "3rem",
-        duration: 2,
+        duration: 1.5,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: document.getElementById("line"),
           start: "top top+=200",
@@ -156,161 +148,56 @@ const Services = () => {
     );
 
     revealRefs.current.forEach((el, index) => {
-      // console.log(el.childNodes);
-      if (mq.matches) {
-        t1.from(
-          el.childNodes[0],
-
+      t1.from(
+        el.childNodes[0],
+        {
+          x: -150, // smoother movement
+          opacity: 0,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            id: `section-${index + 1}-left`,
+            trigger: el,
+            start: "top bottom-=100",
+            end: "center center",
+            scrub: true,
+          },
+        }
+      )
+        .to(
+          el.childNodes[1],
           {
-            x: -300,
-            opacity: 0,
-            duration: 2,
-
-            ease: "power2",
-            scrollTrigger: {
-              id: `section-${index + 1}`,
-              trigger: el,
-              start: "top center+=200",
-              end: "bottom bottom-=100",
-              scrub: true,
-              snap: true,
-              //
-              // toggleActions: "play none none reverse",
-            },
-          }
-        )
-          .to(el.childNodes[1], {
-            transform: "scale(0)",
-
+            scale: 0.8, // instead of full scale(0), keep a bit visible
             ease: "power2.inOut",
-
+            duration: 1.5,
             scrollTrigger: {
-              id: `section-${index + 1}`,
+              id: `section-${index + 1}-middle`,
               trigger: el.childNodes[1],
               start: "top center",
               end: "bottom center",
               scrub: true,
-              snap: true,
-
-              // toggleActions: "play none none reverse",
-            },
-          })
-          .from(
-            el.childNodes[2],
-
-            {
-              y: 400,
-
-              duration: 2,
-
-              ease: "power2",
-              scrollTrigger: {
-                id: `section-${index + 1}`,
-                trigger: el,
-                start: "top center+=100",
-                end: "bottom bottom-=200",
-                scrub: true,
-                snap: true,
-                //
-                // toggleActions: "play none none reverse",
-              },
-            }
-          )
-          .to(
-            el,
-
-            {
-              opacity: 0,
-
-              ease: "power2",
-              scrollTrigger: {
-                id: `section-${index + 1}`,
-                trigger: el,
-                start: "top top+=300",
-                end: "center top+=300",
-                scrub: true,
-              },
-            }
-          );
-      } else {
-        t1.from(
-          el.childNodes[0],
-
-          {
-            x: -300,
-            opacity: 0,
-            duration: 2,
-
-            ease: "power2",
-            scrollTrigger: {
-              id: `section-${index + 1}`,
-              trigger: el,
-              start: "top center+=100",
-              end: "bottom bottom-=200",
-              scrub: true,
-              snap: true,
-              //
-              // toggleActions: "play none none reverse",
             },
           }
         )
-          .to(el.childNodes[1], {
-            transform: "scale(0)",
-
-            ease: "power2.inOut",
-
+        .from(
+          el.childNodes[2],
+          {
+            y: 200, // reduced movement for smoothness
+            opacity: 0,
+            duration: 2,
+            ease: "power2.out",
             scrollTrigger: {
-              id: `section-${index + 1}`,
-              trigger: el.childNodes[1],
-              start: "top center",
-              end: "bottom center",
+              id: `section-${index + 1}-right`,
+              trigger: el,
+              start: "top bottom-=100",
+              end: "center center",
               scrub: true,
-              snap: true,
-
-              // toggleActions: "play none none reverse",
             },
-          })
-          .from(
-            el.childNodes[2],
-
-            {
-              y: 400,
-
-              duration: 2,
-
-              ease: "power2",
-              scrollTrigger: {
-                id: `section-${index + 1}`,
-                trigger: el,
-                start: "top center+=100",
-                end: "bottom bottom-=200",
-                scrub: true,
-                snap: true,
-                //
-                // toggleActions: "play none none reverse",
-              },
-            }
-          )
-          .to(
-            el,
-
-            {
-              opacity: 0,
-
-              ease: "power2",
-              scrollTrigger: {
-                id: `section-${index + 1}`,
-                trigger: el,
-                start: "top top+=200",
-                end: "center top+=300",
-                scrub: true,
-              },
-            }
-          );
-      }
+          }
+        );
+      // removed the fading out
     });
   }, []);
-
 
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
