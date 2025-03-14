@@ -3,6 +3,7 @@ import LinkedId from "../../assets/linkedin-brands.svg";
 import Instagram from "../../assets/instagram-square-brands.svg";
 import Debsoc from "../../assets/DEBSOClogo.png";
 import styled from "styled-components";
+import Youtube from "../../assets/youtube.png";
 
 const ContactSection = styled.section`
   width: 100vw;
@@ -142,6 +143,9 @@ const Contact = () => {
         </a>
         <a href="https://www.instagram.com/debsocnitd/">
           <img src={Instagram} alt="Instagram" />
+        </a>
+        <a href="https://www.youtube.com/@thedebatingsocietynitdurga3689">
+          <img src={Youtube} alt="Youtube" />
         </a>
       </Icons>
     </ContactSection>
