@@ -1,13 +1,11 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Tube from "../../assets/3dtube.png";
-import Cone from "../../assets/3dtriangle.png";
-import Capsule from "../../assets/3dcapsule.png";
 import TextBlock from "../../components/TextBlock";
 import SvgBlock from "../../components/SvgBlock";
+import mic from "../../assets/microphone.png"
+import treasure from "../../assets/treasureHunt.png";
 
 const ServiceSection = styled.section`
   width: 100vw;
@@ -228,9 +226,9 @@ and impromptu speeches judged on matter, manner, and method.
           }
         />
         <OBJ>
-          <img src={Tube} alt="Tube Object" width="400" height="400" />
+          <img src={mic} alt="Tube Object" width="400" height="400" />
         </OBJ>
-        <SvgBlock svg="NITPD.svg" />
+        <SvgBlock svg="NITDPD2.svg" />
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
@@ -248,9 +246,9 @@ A high-stakes, campus-wide murder mystery where every student becomes
           }
         />
         <OBJ>
-          <img src={Cone} alt="Cone Object" width="400" height="400" />
+          <img src={treasure} alt="Cone Object" style={{width: "400" ,height: "400"}}  />
         </OBJ>
-        <SvgBlock svg="QR.svg" />
+        <SvgBlock svg="QR2.svg" />
       </Content>
       <Content>
         <TextBlock
@@ -267,7 +265,7 @@ A high-stakes, campus-wide murder mystery where every student becomes
           }
         />
         <OBJ>
-          <img src={Capsule} alt="Capsule Object" width="400" height="400" />
+          {/* <img src={Capsule} alt="Capsule Object" width="400" height="400" /> */}
         </OBJ>
         <SvgBlock svg="BT.svg" />
       </Content>
