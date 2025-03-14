@@ -243,7 +243,7 @@ const Header = () => {
           About Us
         </a>
         <a href="#services" onClick={(e) => scrollUp("services", e)}>
-          Services
+          What we do
         </a>
         <a href="#contact" onClick={(e) => scrollUp("contact", e)}>
           <Button>Contact Us</Button>
