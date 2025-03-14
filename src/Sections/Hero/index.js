@@ -5,7 +5,9 @@ import pinkBlob from "../../assets/blobPink.png";
 import purpleBlob from "../../assets/blob purple.png";
 import whiteBlob from "../../assets/blob white.png";
 import arrow from "../../assets/Arrow Right.svg";
-import bgImage from "../../assets/landingBG.svg"
+import bgImage from "../../assets/landingBG4.jpg";
+import funnySVG from "../../assets/funnySVG.svg";
+
 const move = keyframes`
 0% { transform: translateY(-5px)  }
     50% { transform: translateY(10px) }
@@ -172,7 +174,16 @@ const CTA = styled.button`
 
 const HeroSection = () => {
   return (
-    <HomeSection id="home" style={{ backgroundImage: `url(${bgImage})` }}>
+    <HomeSection 
+  id="home" 
+  style={{ 
+    backgroundImage: `url(${bgImage})`, 
+    backgroundRepeat: "no-repeat", 
+    backgroundSize: "cover", // Adjusts image to fit the section
+    backgroundPosition: "center", // Centers the image
+  }}
+>
+
       <Blobs>
         <PinkBlob>
           <img src={pinkBlob} alt="" width="400" height="400" />{" "}
@@ -202,14 +213,46 @@ const HeroSection = () => {
           
         </Lb>
 
-        <div style={{zIndex:11}}><DotLottieReact
-      src="https://lottie.host/e77bceca-1228-4072-8f20-97f51985cadc/OIwgksZ0iV.lottie"
-      loop
-      autoplay
-      height={450}
-      width={450}
-    /></div>
-        
+        <div style={{ position: "relative", display: "inline-block" }}>
+  {/* Background breathing circle */}
+  <div 
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      width: 450,
+      height: 450,
+      borderRadius: "100%",
+      backgroundColor: "rgb(157, 255, 0)", // Adjust color as needed
+      transform: "translate(-50%, -50%)",
+      animation: "breath 2s infinite ease-in-out",
+      zIndex: 11, // Behind the SVG
+    }} 
+  />
+
+  {/* SVG Component */}
+  <funnySVG style={{ position: "relative", zIndex: 12 }}>
+    <img 
+      src={funnySVG} 
+      alt="" 
+      style={{ height: 650, width: 600, position: "relative", zIndex: 13 }} 
+    />
+  </funnySVG>
+
+  {/* CSS Animation */}
+  <style>
+    {`
+      @keyframes breath {
+        0% { transform: translate(-50%, -50%) scale(1); }
+        50% { transform: translate(-50%, -50%) scale(1.2); }
+        100% { transform: translate(-50%, -50%) scale(1); }
+      }
+    `}
+  </style>
+</div>
+
+
+
       </MainContent>
     </HomeSection>
   );
