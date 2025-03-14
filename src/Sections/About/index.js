@@ -1,9 +1,9 @@
 import styled, { keyframes } from "styled-components";
-import wave from "../../assets/waves.svg";
-import rocket from "../../assets/rocket image.png";
-import human from "../../assets/human.svg";
-import hand from "../../assets/hand.svg";
-import gotIdea from "../../assets/gotIdea.png"
+import wave2 from "../../assets/waves2.svg";
+import about1 from "../../assets/about1.png";
+import about2 from "../../assets/about2.avif";
+import surprised from "../../assets/retrosurprised.png";
+
 const move = keyframes`
 0% { transform: translateY(-5px)         }
     50% { transform: translateY(10px) translateX(10px)        }
@@ -120,9 +120,9 @@ const AboutText = styled.div`
 const About = () => {
   return (
     <AboutSection id="about">
-      <Waves src={wave} alt="" />
+      <Waves src={wave2} alt="" />
       <Hand>
-        <img src={hand} alt="" />
+        <img src={surprised} alt="" />
       </Hand>
       <Main>
         <div>
@@ -131,11 +131,11 @@ const About = () => {
         </div>
         <Content>
           <Rocket>
-            <img src={gotIdea} alt="" width="400" height="400" />
+            <img src={about1} alt="" width="400" height="400" />
           </Rocket>
           <AboutText>
             <Human>
-              <img src={human} alt="" width="400" height="400" />
+              <img src={about2} alt="" width="400" height="400" />
             </Human>
 
             <Text>
