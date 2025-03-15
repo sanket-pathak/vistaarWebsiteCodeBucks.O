@@ -1,4 +1,5 @@
 // This is HeroSection component, Main top section of website
+
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import styled, { keyframes } from "styled-components";
 import pinkBlob from "../../assets/blobPink.png";
@@ -7,6 +8,7 @@ import whiteBlob from "../../assets/blob white.png";
 import arrow from "../../assets/Arrow Right.svg";
 import bgImage from "../../assets/landingBG4.jpg";
 import funnySVG from "../../assets/funnySVG.svg";
+import './index.css';
 
 const move = keyframes`
 0% { transform: translateY(-5px)  }
@@ -200,17 +202,19 @@ const HeroSection = () => {
         <Lb id="leftBlock">
           <Topic>
             <Circle />
-            <span>Where Words Matter</span>
+            <span className='short-description'>Where Words Matter</span>
           </Topic>
-          <Title>We Came. We Spoke. We Conquered.</Title>
-          <SubText>
+          <Title className='main-title'>
+  We Came. We Spoke. We Conquered.
+</Title>
+
+          <SubText className='short-description'>
           Disagreeing Professionally Since 2015
           </SubText>
-          <a href="https://debsocnitdgp.com/" target="_blank"><CTA>
+          <a  href="https://debsocnitdgp.com/" target="_blank" ><CTA>
             Get in touch &nbsp;
             <img src={arrow} alt="cta" width="100" height="100"  />
           </CTA></a>
-          
         </Lb>
 
         <div style={{ position: "relative", display: "inline-block" }}>
