@@ -3,6 +3,7 @@ import wave2 from "../../assets/waves2.svg";
 import about1 from "../../assets/about1.png";
 import about2 from "../../assets/about2.avif";
 import surprised from "../../assets/retrosurprised.png";
+import background from "../../assets/SecondFrameBG.jpg";
 
 const move = keyframes`
 0% { transform: translateY(-5px)         }
@@ -119,7 +120,12 @@ const AboutText = styled.div`
 
 const About = () => {
   return (
-    <AboutSection id="about">
+    <AboutSection id="about"  style={{ 
+      backgroundImage: `url(${background})`, 
+      backgroundRepeat: "no-repeat", 
+      backgroundSize: "cover", 
+      backgroundPosition: "center",
+    }}>
       <Waves src={wave2} alt="" />
       <Hand>
         <img src={surprised} alt="" />
