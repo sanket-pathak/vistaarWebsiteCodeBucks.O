@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@font-face {
+    font-family: 'main-font';
+    src: url(BADABB__.TTF);
+}
+
+.short-description{
+    color: whitesmoke;
+    font-size: medium;
+    font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
+.main-title{
+    font-family: 'main-font', sans-serif;
+    letter-spacing: 5px;
+    font-weight: 200;
+    color:azure;
+}
