@@ -21,3 +21,19 @@
     font-weight: 200;
     color:azure;
 }
+
+
+  .landing-logo {
+    margin-left: 25vw;
+    width: clamp(39vh, 51%, 100vh) !important;
+    height: auto !important;
+     z-index: 6 !important;
+  }
+  @media  screen and (max-width: 48em) {
+    .landing-logo{
+    width: clamp(39vh, 49%, 100vh) !important;
+    margin-top: 23vw;
+    height: auto;
+
+    }
+  }
