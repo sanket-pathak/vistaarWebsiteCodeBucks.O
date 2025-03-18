@@ -4,6 +4,7 @@ import about1 from "../../assets/about1.png";
 import about2 from "../../assets/about2.avif";
 import surprised from "../../assets/retrosurprised.png";
 import background from "../../assets/SecondFrameBG.jpg";
+import "./index.css"; 
 
 const move = keyframes`
 0% { transform: translateY(-5px)         }
@@ -120,12 +121,7 @@ const AboutText = styled.div`
 
 const About = () => {
   return (
-    <AboutSection id="about"  style={{ 
-      backgroundImage: `url(${background})`, 
-      backgroundRepeat: "no-repeat", 
-      backgroundSize: "cover", 
-      backgroundPosition: "center",
-    }}>
+    <AboutSection id="about" className="about-section"  >
       <Waves src={wave2} alt="" />
       <Hand>
         <img src={surprised} alt="" />
