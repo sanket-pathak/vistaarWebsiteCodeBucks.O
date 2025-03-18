@@ -17,6 +17,9 @@ const ServiceSection = styled.section`
   justify-content: center;
   position: relative;
   padding-top: 20rem;
+
+  //made changes here
+  background-color: black;
 `;
 
 const Background = styled.div`
@@ -32,13 +35,13 @@ const Background = styled.div`
   z-index: -1;
   background-color: #0a0b10;
   background-size: auto 100vh;
-  background-repeat: no-repeat;
 `;
 
 const Title = styled.h1`
   color: var(--white);
   display: inline-block;
   font-size: 2rem;
+  overflow: hidden;
   /* margin-top: 4rem; */
   margin-top: 1rem;
   position: relative;
@@ -115,87 +118,87 @@ const Services = () => {
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
-  useEffect(() => {
-    const element = ref.current;
-    const mq = window.matchMedia("(max-width: 48em)");
+  // useEffect(() => {
+  //   const element = ref.current;
+  //   const mq = window.matchMedia("(max-width: 48em)");
 
-    const t1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: document.getElementById("services"),
-        start: "top top+=180",
-        end: "bottom bottom",
-        pin: element,
-        pinReparent: true,
-      },
-    });
+  //   const t1 = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: document.getElementById("services"),
+  //       start: "top top+=180",
+  //       end: "bottom bottom",
+  //       pin: element,
+  //       pinReparent: true,
+  //     },
+  //   });
 
-    t1.fromTo(
-      document.getElementById("line"),
-      { height: "15rem" },
-      {
-        height: "3rem",
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: document.getElementById("line"),
-          start: "top top+=200",
-          end: "bottom top+=220",
-          scrub: true,
-        },
-      }
-    );
+  //   t1.fromTo(
+  //     document.getElementById("line"),
+  //     { height: "15rem" },
+  //     {
+  //       height: "3rem",
+  //       duration: 1.5,
+  //       ease: "power2.out",
+  //       scrollTrigger: {
+  //         trigger: document.getElementById("line"),
+  //         start: "top top+=200",
+  //         end: "bottom top+=220",
+  //         scrub: true,
+  //       },
+  //     }
+  //   );
 
-    revealRefs.current.forEach((el, index) => {
-      t1.from(
-        el.childNodes[0],
-        {
-          x: -150, // smoother movement
-          opacity: 0,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            id: `section-${index + 1}-left`,
-            trigger: el,
-            start: "top bottom-=100",
-            end: "center center",
-            scrub: true,
-          },
-        }
-      )
-        .to(
-          el.childNodes[1],
-          {
-            scale: 0.8, // instead of full scale(0), keep a bit visible
-            ease: "power2.inOut",
-            duration: 1.5,
-            scrollTrigger: {
-              id: `section-${index + 1}-middle`,
-              trigger: el.childNodes[1],
-              start: "top center",
-              end: "bottom center",
-              scrub: true,
-            },
-          }
-        )
-        .from(
-          el.childNodes[2],
-          {
-            y: 200, // reduced movement for smoothness
-            opacity: 0,
-            duration: 2,
-            ease: "power2.out",
-            scrollTrigger: {
-              id: `section-${index + 1}-right`,
-              trigger: el,
-              start: "top bottom-=100",
-              end: "center center",
-              scrub: true,
-            },
-          }
-        );
-      // removed the fading out
-    });
-  }, []);
+  //   revealRefs.current.forEach((el, index) => {
+  //     t1.from(
+  //       el.childNodes[0],
+  //       {
+  //         x: -150, // smoother movement
+  //         opacity: 0,
+  //         duration: 2,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           id: `section-${index + 1}-left`,
+  //           trigger: el,
+  //           start: "top bottom-=100",
+  //           end: "center center",
+  //           scrub: true,
+  //         },
+  //       }
+  //     )
+  //       .to(
+  //         el.childNodes[1],
+  //         {
+  //           scale: 0.8, // instead of full scale(0), keep a bit visible
+  //           ease: "power2.inOut",
+  //           duration: 1.5,
+  //           scrollTrigger: {
+  //             id: `section-${index + 1}-middle`,
+  //             trigger: el.childNodes[1],
+  //             start: "top center",
+  //             end: "bottom center",
+  //             scrub: true,
+  //           },
+  //         }
+  //       )
+  //       .from(
+  //         el.childNodes[2],
+  //         {
+  //           y: 200, // reduced movement for smoothness
+  //           opacity: 0,
+  //           duration: 2,
+  //           ease: "power2.out",
+  //           scrollTrigger: {
+  //             id: `section-${index + 1}-right`,
+  //             trigger: el,
+  //             start: "top bottom-=100",
+  //             end: "center center",
+  //             scrub: true,
+  //           },
+  //         }
+  //       );
+  //     // removed the fading out
+  //   });
+  // }, []);
 
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
