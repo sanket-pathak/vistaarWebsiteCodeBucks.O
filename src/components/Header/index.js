@@ -2,13 +2,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import './index.css';
 
 const Headers = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
- background-color: black;
   color: var(--white);
   position: relative;
   z-index: 500;
@@ -68,30 +68,7 @@ const Nav = styled.nav`
   }
 `;
 
-const Button = styled.button`
-  background-color: var(--purple);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  color: var(--white);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: scale(1.1);
-  }
-  &:focus {
-    transform: scale(0.9);
-  }
-  @media only Screen and (max-width: 40em) {
-    font-size: 1.2rem;
-    &:hover {
-      transform: none;
-    }
-    &:focus {
-      transform: none;
-    }
-  }
-`;
+
 const HamburgerBtn = styled.button`
   display: none;
   @media only Screen and (max-width: 48em) {
@@ -178,76 +155,77 @@ const Header = () => {
     scrollUp(id, e);
   };
 
-  useEffect(() => {
-    const element = ref.current;
+  // useEffect(() => {
+  //   const element = ref.current;
 
-    const mq = window.matchMedia("(max-width: 40em)");
-    // console.log("mq", mq);
-    if (mq.matches) {
-      gsap.to(element, {
-        position: "fixed",
-        top: "0",
-        left: "0",
-        right: "0",
-        padding: "1rem 2.5rem",
+  //   const mq = window.matchMedia("(max-width: 40em)");
+  //   // console.log("mq", mq);
+  //   if (mq.matches) {
+  //     gsap.to(element, {
+  //       position: "fixed",
+  //       top: "0",
+  //       left: "0",
+  //       right: "0",
+  //       padding: "1rem 2.5rem",
 
-        borderRadius: "0 0 50px 50px",
+  //       borderRadius: "0 0 50px 50px",
 
-        border: "2px solid var(--white)",
+  //       border: "2px solid var(--white)",
 
-        duration: 1,
-        ease: "power1.out",
+  //       duration: 1,
+  //       ease: "power1.out",
 
-        scrollTrigger: {
-          trigger: element,
-          start: "bottom+=200 top",
-          end: "+=100",
-          scrub: true,
-        },
-      });
-    } else {
-      gsap.to(element, {
-        position: "fixed",
-        top: "1rem",
-        left: "3rem",
-        right: "3rem",
-        padding: "1.5rem 2rem",
+  //       scrollTrigger: {
+  //         trigger: element,
+  //         start: "bottom+=200 top",
+  //         end: "+=100",
+  //         scrub: true,
+  //       },
+  //     });
+  //   } else {
+  //     gsap.to(element, {
+  //       position: "fixed",
+  //       top: "1rem",
+  //       left: "3rem",
+  //       right: "3rem",
+  //       padding: "1.5rem 2rem",
 
-        borderRadius: "50px",
+  //       borderRadius: "50px",
 
-        border: "3px solid var(--white)",
+  //       border: "3px solid var(--white)",
 
-        duration: 1,
-        ease: "power1.out",
+  //       duration: 1,
+  //       ease: "power1.out",
 
-        scrollTrigger: {
-          trigger: element,
-          start: "bottom+=300 top",
-          end: "+=250",
-          scrub: true,
-        },
-      });
-    }
-  }, []);
+  //       scrollTrigger: {
+  //         trigger: element,
+  //         start: "bottom+=300 top",
+  //         end: "+=250",
+  //         scrub: true,
+  //       },
+  //     });
+  //   }
+  // }, []);
 
   return (
-    <Headers ref={ref}>
-      <Logo>
+    <Headers ref={ref} className="navigationBar">
+      {/* <Logo>
         <img src="https://vistaar.debsocnitdgp.com/Assets/Images/Vistaar.svg" alt="Vistaar"  style={{ height: '60px', width: '250px' }} />
-      </Logo>
+      </Logo> */}
       <Nav>
         <a href="#home" onClick={(e) => scrollUp("home", e)}>
           Home
         </a>
-        <a href="#about" onClick={(e) => scrollUp("about", e)}>
-          About Us
-        </a>
         <a href="#services" onClick={(e) => scrollUp("services", e)}>
-          What we do
+          Events
         </a>
-        <a href="#contact" onClick={(e) => scrollUp("contact", e)}>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWwGycaURCft1TfigoLvP0J8wffmySgzLLtIC-MoMz3OdJig/viewform" target="_blank">
+          NITD-PD'25
+        </a>
+        
+        {/* <a href="#contact" onClick={(e) => scrollUp("contact", e)}>
           <Button>Contact Us</Button>
-        </a>
+        </a> */}
       </Nav>
       <HamburgerBtn clicked={+click} onClick={() => setClick(!click)}>
         <span></span>
@@ -256,15 +234,14 @@ const Header = () => {
         <a href="#home" onClick={(e) => handleClick("home", e)}>
           Home
         </a>
-        <a href="#about" onClick={(e) => handleClick("about", e)}>
-          About Us
-        </a>
         <a href="#services" onClick={(e) => handleClick("services", e)}>
-          Services
+          Events
         </a>
-        <a href="#contact" onClick={(e) => handleClick("contact", e)}>
-          <Button>Contact Us</Button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWwGycaURCft1TfigoLvP0J8wffmySgzLLtIC-MoMz3OdJig/viewform">
+        NITD-PD'25
         </a>
+        
+        
       </MobileMenu>
     </Headers>
   );
