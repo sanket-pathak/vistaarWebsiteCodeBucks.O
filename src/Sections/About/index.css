@@ -1,0 +1,11 @@
+.about-section{
+        background-image: url("../../assets/SecondFrameBG.jpg");
+        /* background-repeat: "no-repeat"; */
+        height: 100vh;
+        background-attachment: "fixed";
+
+        /* background-size: "cover";
+        background-position: "center";
+        min-height: 85vh; 
+        width: 100vw; */
+}
