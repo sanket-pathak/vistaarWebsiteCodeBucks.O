@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      {showParallax && (
+      {/* {showParallax && (
         <div className="parallax-wrapper">
           <Parallax />
         </div>
@@ -34,7 +34,16 @@ function App() {
           <Home />
           <Footer />
         </Suspense>
-      )}
+      )} */}
+
+        <GlobalStyle />
+          <ScrollToTop />
+          <Header />
+          <Home />
+          <Footer />
+
+
+
     </>
   );
 }
