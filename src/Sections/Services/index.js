@@ -6,6 +6,10 @@ import TextBlock from "../../components/TextBlock";
 import SvgBlock from "../../components/SvgBlock";
 import mic from "../../assets/microphone.png"
 import treasure from "../../assets/treasureHunt.png";
+import rose from "../../assets/rose.png";
+import romangod from "../../assets/romangod.png";
+import kids from "../../assets/kids.png";
+import "./index.css";
 
 const ServiceSection = styled.section`
   width: 100vw;
@@ -118,87 +122,87 @@ const Services = () => {
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
-  // useEffect(() => {
-  //   const element = ref.current;
-  //   const mq = window.matchMedia("(max-width: 48em)");
+  useEffect(() => {
+    const element = ref.current;
+    const mq = window.matchMedia("(max-width: 48em)");
 
-  //   const t1 = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: document.getElementById("services"),
-  //       start: "top top+=180",
-  //       end: "bottom bottom",
-  //       pin: element,
-  //       pinReparent: true,
-  //     },
-  //   });
+    const t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: document.getElementById("services"),
+        start: "top top+=180",
+        end: "bottom bottom",
+        pin: element,
+        pinReparent: true,
+      },
+    });
 
-  //   t1.fromTo(
-  //     document.getElementById("line"),
-  //     { height: "15rem" },
-  //     {
-  //       height: "3rem",
-  //       duration: 1.5,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: document.getElementById("line"),
-  //         start: "top top+=200",
-  //         end: "bottom top+=220",
-  //         scrub: true,
-  //       },
-  //     }
-  //   );
+    t1.fromTo(
+      document.getElementById("line"),
+      { height: "15rem" },
+      {
+        height: "3rem",
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: document.getElementById("line"),
+          start: "top top+=200",
+          end: "bottom top+=220",
+          scrub: true,
+        },
+      }
+    );
 
-  //   revealRefs.current.forEach((el, index) => {
-  //     t1.from(
-  //       el.childNodes[0],
-  //       {
-  //         x: -150, // smoother movement
-  //         opacity: 0,
-  //         duration: 2,
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           id: `section-${index + 1}-left`,
-  //           trigger: el,
-  //           start: "top bottom-=100",
-  //           end: "center center",
-  //           scrub: true,
-  //         },
-  //       }
-  //     )
-  //       .to(
-  //         el.childNodes[1],
-  //         {
-  //           scale: 0.8, // instead of full scale(0), keep a bit visible
-  //           ease: "power2.inOut",
-  //           duration: 1.5,
-  //           scrollTrigger: {
-  //             id: `section-${index + 1}-middle`,
-  //             trigger: el.childNodes[1],
-  //             start: "top center",
-  //             end: "bottom center",
-  //             scrub: true,
-  //           },
-  //         }
-  //       )
-  //       .from(
-  //         el.childNodes[2],
-  //         {
-  //           y: 200, // reduced movement for smoothness
-  //           opacity: 0,
-  //           duration: 2,
-  //           ease: "power2.out",
-  //           scrollTrigger: {
-  //             id: `section-${index + 1}-right`,
-  //             trigger: el,
-  //             start: "top bottom-=100",
-  //             end: "center center",
-  //             scrub: true,
-  //           },
-  //         }
-  //       );
-  //     // removed the fading out
-  //   });
-  // }, []);
+    revealRefs.current.forEach((el, index) => {
+      t1.from(
+        el.childNodes[0],
+        {
+          x: -150, // smoother movement
+          opacity: 0,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            id: `section-${index + 1}-left`,
+            trigger: el,
+            start: "top bottom-=100",
+            end: "center center",
+            scrub: true,
+          },
+        }
+      )
+        .to(
+          el.childNodes[1],
+          {
+            scale: 0.8, // instead of full scale(0), keep a bit visible
+            ease: "power2.inOut",
+            duration: 1.5,
+            scrollTrigger: {
+              id: `section-${index + 1}-middle`,
+              trigger: el.childNodes[1],
+              start: "top center",
+              end: "bottom center",
+              scrub: true,
+            },
+          }
+        )
+        .from(
+          el.childNodes[2],
+          {
+            y: 200, // reduced movement for smoothness
+            opacity: 0,
+            duration: 2,
+            ease: "power2.out",
+            scrollTrigger: {
+              id: `section-${index + 1}-right`,
+              trigger: el,
+              start: "top bottom-=100",
+              end: "center center",
+              scrub: true,
+            },
+          }
+        );
+      // removed the fading out
+    });
+  }, []);
 
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
@@ -231,7 +235,7 @@ and impromptu speeches judged on matter, manner, and method.
         <OBJ>
           <img src={mic} alt="Tube Object" width="400" height="400" />
         </OBJ>
-        <SvgBlock svg="NITDPD2.svg" />
+        <SvgBlock svg="nitdpd.jpg" />
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
@@ -251,7 +255,7 @@ A high-stakes, campus-wide murder mystery where every student becomes
         <OBJ>
           <img src={treasure} alt="Cone Object" style={{width: "400" ,height: "400"}}  />
         </OBJ>
-        <SvgBlock svg="QR2.svg" />
+        <SvgBlock svg="killcode.jpg" />
       </Content>
       <Content>
         <TextBlock
@@ -267,10 +271,48 @@ A high-stakes, campus-wide murder mystery where every student becomes
             </h5>
           }
         />
-        <OBJ>
-          {/* <img src={Capsule} alt="Capsule Object" width="400" height="400" /> */}
+         <OBJ>
+          <img src={kids} alt="rose flower" width="400" height="400"/>
         </OBJ>
         <SvgBlock svg="BT.svg" />
+      </Content>
+      <Content>
+        <TextBlock
+          topic="Speed Dating"
+          title={<h1>Swipe it up | Find your perfect match</h1>}
+          subText={
+            <h5>
+              Looking to connect with like-minded people and maybe find that special someone? 
+              𝗦𝘄𝗶𝗽𝗲 𝐈𝘁 𝐔𝗽 brings famous pop culture characters into the mix for a fun twist! it's a 
+              chance to improve your social skills, practice engaging with strangers,
+              and boost your confidence. 
+            </h5>
+          }
+        />
+        <OBJ>
+          <img src={rose} alt="rose flower" width="400" height="400" />
+        </OBJ>
+        <SvgBlock svg="swipeitup.jpg" />
+      </Content>
+      <Content>
+        <TextBlock
+          topic="Renegado"
+          title={<h1>A turncoat Debate</h1>}
+          subText={
+            <h5>
+              Renegado is a Turncoat Debate where the speaker takes a stance on a
+               topic and then switches sides after a set amount of time, presenting both
+                the pros and cons of a situation. The main challenge is to maintain the
+                 coherence of an argument while switching sides. The emphasis is on 
+                 transitions, the strength of argument, and balancing of opinions.
+
+            </h5>
+          }
+        />
+        <OBJ>
+          <img src={romangod} alt="rose flower" width="400" height="400"/>
+        </OBJ>
+        <SvgBlock svg="renegado.jpg" />
       </Content>
     </ServiceSection>
   );
