@@ -20,7 +20,6 @@ const Home = () => {
   return (
     <Container>
       <HeroSection />
-      <About />
       <Services />
       <Testimonials />
       <Contact />
