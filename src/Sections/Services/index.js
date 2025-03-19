@@ -9,7 +9,6 @@ import treasure from "../../assets/treasureHunt.png";
 import rose from "../../assets/rose.png";
 import romangod from "../../assets/romangod.png";
 import kids from "../../assets/kids.png";
-import "./index.css";
 
 const ServiceSection = styled.section`
   width: 100vw;
