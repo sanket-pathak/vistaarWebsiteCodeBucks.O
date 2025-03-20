@@ -44,7 +44,7 @@ const Footer = () => {
   return (
     <FOOTER>
       <LeftText>
-        © 2025 Made with ❤️ by WebD Team
+        © 2025 Copyright? More like copy-right-us-if-you-dare
       </LeftText>
       <RightText>
         The Debating Society NIT Durgapur
