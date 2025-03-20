@@ -9,6 +9,25 @@ import treasure from "../../assets/treasureHunt.png";
 import rose from "../../assets/rose.png";
 import romangod from "../../assets/romangod.png";
 import kids from "../../assets/kids.png";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import nitdpd from "../../assets/nitdpd.jpg";
+import "./index.css";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 const ServiceSection = styled.section`
   width: 100vw;
@@ -116,6 +135,9 @@ const OBJ = styled.div`
 `;
 
 const Services = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const ref = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
   const revealRefs = useRef([]);
@@ -228,13 +250,33 @@ A dynamic 3-on-3 format where Government
 and Opposition clash over a motion, with prepared 
 and impromptu speeches judged on matter, manner, and method.
  Expect fast-paced arguments, sharp rebuttals, and strategic 
- case-building.            </h5>
+ case-building.</h5>
           }
         />
         <OBJ>
           <img src={mic} alt="Tube Object" width="400" height="400" />
         </OBJ>
-        <SvgBlock svg="nitdpd.jpg" />
+        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/nitdpd.jpg?raw=true" onClick={handleOpen}/>
+<Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box className="popup" sx={style}>
+    <Typography id="modal-modal-title" variant="h6" component="h2">
+      NITDPD
+    </Typography>
+    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+    A dynamic 3-on-3 format where Government 
+and Opposition clash over a motion, with prepared 
+and impromptu speeches judged on matter, manner, and method.
+ Expect fast-paced arguments, sharp rebuttals, and strategic 
+ case-building.
+    </Typography>
+    <a href="https://en.wikipedia.org/wiki/Victoria_Memorial,_Kolkata" target="_blank"><button className="button-8" >Register</button></a>
+  </Box>
+</Modal>
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
@@ -254,7 +296,28 @@ A high-stakes, campus-wide murder mystery where every student becomes
         <OBJ>
           <img src={treasure} alt="Cone Object" style={{width: "400" ,height: "400"}}  />
         </OBJ>
-        <SvgBlock svg="killcode.jpg" />
+        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/killcode.jpg?raw=true" onClick={handleOpen}/>
+<Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box className="popup" sx={style}>
+    <Typography id="modal-modal-title" variant="h6" component="h2">
+      Killcode
+    </Typography>
+    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+    A high-stakes, campus-wide murder mystery where every student becomes
+ a detective. Solve cryptic clues, scan hidden QR codes scattered 
+ across college, and piece together evidence to unmask the killer. With twists at 
+ every turn and a thrilling narrative, it's not just a hunt — it's a race against
+  time for glory and a massive prize pool. Engage your instincts, trust no one,
+   and may the sharpest minds win!
+    </Typography>
+    <a href="https://en.wikipedia.org/wiki/Victoria_Memorial,_Kolkata" target="_blank"><button className="button-8" >Register</button></a>
+  </Box>
+</Modal>
       </Content>
       <Content>
         <TextBlock
