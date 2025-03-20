@@ -94,3 +94,11 @@
   color: #2c5777;
 }
 
+@media screen and (max-width: 415px){
+  .popup{
+    position: relative;
+    width: 290px !important;
+    /* height: 400px; */
+    color: rgb(255, 0, 157);
+  }
+}
