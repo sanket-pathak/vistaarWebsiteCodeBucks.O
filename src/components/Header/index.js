@@ -77,8 +77,8 @@ const HamburgerBtn = styled.button`
   position: relative;
   background-color: transparent;
   width: 2rem;
-  height: 2px;
-  margin-top: 0rem;
+  height: 20px;
+  margin-top: 20px;
   transition: all 0.3s;
   cursor: pointer;
   &::before,
