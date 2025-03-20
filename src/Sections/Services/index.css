@@ -1,0 +1,77 @@
+.custom-modal {
+  position: absolute;
+  z-index: 1050; /* Ensure it's above other content */
+}
+
+.custom-modal .modal-content {
+  width: 500px;
+  height: 700px;
+  margin: 0 auto; /* Center the modal */
+}
+
+.poster{
+   height: 600px;
+   width: 500px;
+   cursor: pointer;
+}
+
+.poster::after{
+  background-color: rgba(0, 0, 0, 0) !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.poster:hover::after{
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.popup{
+  position: relative;
+  left: 20vw !important;
+  color: #39739d;
+  background-color: #d9d9da !important;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset !important;
+}
+
+
+.button-8 {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin:0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  top: 12px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
