@@ -290,7 +290,7 @@ and impromptu speeches judged on matter, manner, and method.
  Expect fast-paced arguments, sharp rebuttals, and strategic 
  case-building.
     </Typography>
-    <a href="https://en.wikipedia.org/wiki/Victoria_Memorial,_Kolkata" target="_blank"><button className="button-8" >Register</button></a>
+    <a href="https://docs.google.com/forms/d/1hK_hwbfvodIGn91T2rIrp3HRV5SKPkchvR5b6Qkqjko/viewform" target="_blank"><button className="button-8" >Register</button></a>
   </Box>
 </Modal>
       </Content>
