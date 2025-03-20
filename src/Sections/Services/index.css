@@ -15,6 +15,14 @@
    cursor: pointer;
 }
 
+@media screen and (max-width: 650px){
+  .poster{
+    margin-top: 20px;
+    height: 500px;
+    width: 80vw;
+  }
+}
+
 .poster::after{
   background-color: rgba(0, 0, 0, 0) !important;
     transition: background-color 0.3s ease !important;
@@ -32,6 +40,16 @@
   box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset !important;
 }
 
+@media screen and (max-width: 650px){
+  .popup{
+    position: relative;
+    right: 300px;
+    margin-left: 27vw;
+    width: 100px;
+    /* height: 400px; */
+    color: rgb(255, 0, 157);
+  }
+}
 
 .button-8 {
   background-color: #e1ecf4;
@@ -75,3 +93,4 @@
   box-shadow: none;
   color: #2c5777;
 }
+
