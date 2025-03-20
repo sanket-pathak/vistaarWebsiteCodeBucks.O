@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import {useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextBlock from "../../components/TextBlock";
@@ -231,7 +231,23 @@ const Services = () => {
     }
   };
 
+  const [openNITDPD, setOpenNITDPD] = useState(false);
+  const [openKillcode, setOpenKillcode] = useState(false);
+  const [openRenegado, setOpenRenegado] = useState(false);
+  const [openSwipe, setOpenSwipe] = useState(false);
+
+  const handleOpenSwipe = () => setOpenSwipe(true);
+  const handleCloseSwipe = () => setOpenSwipe(false);
+
+  const handleOpenNITDPD = () => setOpenNITDPD(true);
+  const handleCloseNITDPD = () => setOpenNITDPD(false);
+
+  const handleOpenKillcode = () => setOpenKillcode(true);
+  const handleCloseKillcode = () => setOpenKillcode(false);
   
+  const handleOpenRenegado = () => setOpenRenegado(true);
+  const handleCloseRenegado = () => setOpenRenegado(false);
+
   return (
     <ServiceSection id="services">
       <Background ref={ref}>
@@ -256,15 +272,15 @@ and impromptu speeches judged on matter, manner, and method.
         <OBJ>
           <img src={mic} alt="Tube Object" width="400" height="400" />
         </OBJ>
-        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/nitdpd.jpg?raw=true" onClick={handleOpen}/>
+        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/nitdpd.jpg?raw=true" onClick={handleOpenNITDPD}/>
 <Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
+  open={openNITDPD}
+  onClose={handleCloseNITDPD}
+  aria-labelledby="modal-modal-title1"
   aria-describedby="modal-modal-description"
 >
   <Box className="popup" sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
+    <Typography id="modal-modal-title1" variant="h6" component="h2">
       NITDPD
     </Typography>
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -296,10 +312,10 @@ A high-stakes, campus-wide murder mystery where every student becomes
         <OBJ>
           <img src={treasure} alt="Cone Object" style={{width: "400" ,height: "400"}}  />
         </OBJ>
-        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/killcode.jpg?raw=true" onClick={handleOpen}/>
+        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/killcode.jpg?raw=true" onClick={handleOpenKillcode}/>
 <Modal
-  open={open}
-  onClose={handleClose}
+  open={openKillcode}
+  onClose={handleCloseKillcode}
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
@@ -354,7 +370,26 @@ A high-stakes, campus-wide murder mystery where every student becomes
         <OBJ>
           <img src={rose} alt="rose flower" width="400" height="400" />
         </OBJ>
-        <SvgBlock svg="swipeitup.jpg" />
+        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/swipeitup.jpg?raw=true" onClick={handleOpenSwipe}/>
+<Modal
+  open={openSwipe}
+  onClose={handleCloseSwipe}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box className="popup" sx={style}>
+    <Typography id="modal-modal-title" variant="h6" component="h2">
+      Swipe It Up
+    </Typography>
+    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+    Looking to connect with like-minded people and maybe find that special someone? 
+              𝗦𝘄𝗶𝗽𝗲 𝐈𝘁 𝐔𝗽 brings famous pop culture characters into the mix for a fun twist! it's a 
+              chance to improve your social skills, practice engaging with strangers,
+              and boost your confidence. 
+    </Typography>
+    <a href="https://en.wikipedia.org/wiki/Victoria_Memorial,_Kolkata" target="_blank"><button className="button-8" >Register</button></a>
+  </Box>
+</Modal>
       </Content>
       <Content>
         <TextBlock
@@ -374,7 +409,28 @@ A high-stakes, campus-wide murder mystery where every student becomes
         <OBJ>
           <img src={romangod} alt="rose flower" width="400" height="400"/>
         </OBJ>
-        <SvgBlock svg="renegado.jpg" />
+        <img className="poster" src="https://github.com/sanket-pathak/vistaarWebsiteCodeBucks.O/blob/main/src/assets/renegado.jpg?raw=true" onClick={handleOpenRenegado}/>
+<Modal
+  open={openRenegado}
+  onClose={handleCloseRenegado}
+  aria-labelledby="modal-modal-title1"
+  aria-describedby="modal-modal-description"
+>
+  <Box className="popup" sx={style}>
+    <Typography id="modal-modal-title1" variant="h6" component="h2">
+      Renegado
+    </Typography>
+    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+    Renegado is a Turncoat Debate where the speaker takes a stance on a
+               topic and then switches sides after a set amount of time, presenting both
+                the pros and cons of a situation. The main challenge is to maintain the
+                 coherence of an argument while switching sides. The emphasis is on 
+                 transitions, the strength of argument, and balancing of opinions.
+
+    </Typography>
+    <a href="https://en.wikipedia.org/wiki/Victoria_Memorial,_Kolkata" target="_blank"><button className="button-8" >Register</button></a>
+  </Box>
+</Modal>
       </Content>
     </ServiceSection>
   );
